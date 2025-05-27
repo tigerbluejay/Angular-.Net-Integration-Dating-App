@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NvzHMIzkoy4=",
+  "dgSpecHash": "oZsQJecuNC0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-dotNet-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-.Net-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\josem\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\josem\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

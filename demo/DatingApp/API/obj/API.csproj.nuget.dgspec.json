@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josem\\Desktop\\Repositories\\Angular-dotNet-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj": {}
+    "C:\\Users\\josem\\Desktop\\Repositories\\Angular-.Net-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josem\\Desktop\\Repositories\\Angular-dotNet-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj": {
+    "C:\\Users\\josem\\Desktop\\Repositories\\Angular-.Net-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-dotNet-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-.Net-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-dotNet-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-.Net-Integration-Dating-App\\demo\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\josem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-dotNet-Integration-Dating-App\\demo\\DatingApp\\API\\obj\\",
+        "outputPath": "C:\\Users\\josem\\Desktop\\Repositories\\Angular-.Net-Integration-Dating-App\\demo\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

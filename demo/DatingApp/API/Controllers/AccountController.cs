@@ -16,7 +16,8 @@ public class AccountController(DataContext context, ITokenService tokenService) 
     {
         if (await UserExists(registerDto.Username)) return BadRequest("Username is taken");
 
-        using var hmac = new HMACSHA512(); // use the using keyword so the object will be disposed when no longer in use
+        return Ok();
+        /* using var hmac = new HMACSHA512(); // use the using keyword so the object will be disposed when no longer in use
 
         var user = new AppUser
         {
@@ -32,7 +33,7 @@ public class AccountController(DataContext context, ITokenService tokenService) 
         {
             Username = user.UserName,
             Token = tokenService.CreateToken(user)
-        };
+        }; */
     }
 
     [HttpPost("login")]

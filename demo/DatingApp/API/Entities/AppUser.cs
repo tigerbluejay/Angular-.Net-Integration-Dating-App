@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using API.Extensions;
 
 namespace API.Entities;
 
@@ -24,6 +25,8 @@ public class AppUser
 
     public required string Gender { get; set; }
 
+    public string? Interests { get; set; }
+
     public string? Introduction { get; set; }
 
     public string? LookingFor { get; set; }
@@ -32,7 +35,14 @@ public class AppUser
 
     public required string Country { get; set; }
 
+    // this is a navigation property
+    // having a one to many relationship. One AppUser many Photos
     public List<Photo> Photos { get; set; }
+
+    public int GetAge()
+    {
+        return DateofBirth.CalculateAge();
+    }
 
 
 

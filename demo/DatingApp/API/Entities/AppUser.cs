@@ -39,10 +39,10 @@ public class AppUser
     // having a one to many relationship. One AppUser many Photos
     public List<Photo> Photos { get; set; }
 
-    public int GetAge()
-    {
-        return DateofBirth.CalculateAge();
-    }
+    // public int GetAge()
+    // {
+    //     return DateofBirth.CalculateAge();
+    // }
 
 
 

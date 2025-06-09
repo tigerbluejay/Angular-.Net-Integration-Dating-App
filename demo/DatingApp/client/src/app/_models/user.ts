@@ -1,6 +1,7 @@
 export interface User {
     username: string;
     token: string;
+    photoUrl?: string;
 }
 
 /* Brief intro to Typescript */

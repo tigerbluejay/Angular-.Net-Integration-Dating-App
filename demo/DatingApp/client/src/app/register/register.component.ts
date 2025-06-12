@@ -59,17 +59,23 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  register() {
-    const dob = this.getDateOnly(this.registerForm.get('dateOfBirth')?.value);
-    this.registerForm.patchValue({dateOfBirth: dob});
-    this.accountService.register(this.registerForm.value).subscribe({
-      next: res => {
-        console.log("Registration successful", res);
-        this.router.navigateByUrl('/members');
-      },
-      error: error => this.validationErrors = error
-    });
-  }
+register() {
+  const dob = this.getDateOnly(this.registerForm.get('dateOfBirth')?.value);
+  this.registerForm.patchValue({dateOfBirth: dob});
+
+  this.accountService.register(this.registerForm.value).subscribe({
+    next: res => {
+      console.log("Registration successful", res);
+      console.log("Trying to navigate to /members");
+      this.router.navigateByUrl('/members').then(success => {
+        console.log('Navigation success:', success);
+      }).catch(err => {
+        console.error('Navigation error:', err);
+      });
+    },
+    error: error => this.validationErrors = error
+  });
+}
 
   cancel() {
     this.cancelRegister.emit(false);

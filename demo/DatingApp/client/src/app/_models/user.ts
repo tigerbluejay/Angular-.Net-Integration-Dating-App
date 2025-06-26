@@ -4,6 +4,7 @@ export interface User {
     gender: string;
     token: string;
     photoUrl?: string;
+    roles: string[];
 }
 
 /* Brief intro to Typescript */

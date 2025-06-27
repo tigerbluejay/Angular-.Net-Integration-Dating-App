@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using API.Middleware;
 using Microsoft.AspNetCore.Identity;
 using API.Entities;
+using API.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,12 +27,14 @@ var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>(); // uses our custom error handling middleware
 app.UseCors(x => x.AllowAnyHeader()
 .AllowAnyMethod()
+.AllowCredentials()
 .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<PresenceHub>("hubs/presence");
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;

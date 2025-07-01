@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { setPaginatedResponse, setPaginationHeaders } from './paginationHelper';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 import { User } from '../_models/user';
+import { Group } from '../_models/group';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class MessageService {
   baseUrl = environment.apiUrl;
   hubUrl = environment.hubsUrl;
   private http = inject(HttpClient);
-  private hubConnection?: HubConnection;
+  hubConnection?: HubConnection;
   paginatedResult = signal<PaginatedResult<Message[]> | null>(null);
   messageThread = signal<Message[]>([]);
 
@@ -26,7 +27,7 @@ export class MessageService {
       })
       .withAutomaticReconnect()
       .build();
-    
+
     this.hubConnection.start().catch(error => console.log(error));
 
     this.hubConnection.on('ReceiveMessageThread', messages => {
@@ -36,6 +37,19 @@ export class MessageService {
     this.hubConnection.on('NewMessage', message => {
       this.messageThread.update(messages => [...messages, message])
     })
+
+    this.hubConnection.on('UpdatedGroup', (group: Group) => {
+      if (group.connections.some(x => x.username === otherUsername)) {
+        this.messageThread.update(messages => {
+          messages.forEach(message => {
+            if (!message.dateRead) {
+              message.dateRead = new Date(Date.now())
+            }
+          })
+          return messages;
+        })
+      }
+    });
   }
 
   stopHubConnection() {
@@ -49,7 +63,7 @@ export class MessageService {
 
     params = params.append('Container', container);
 
-    return this.http.get<Message[]>(this.baseUrl + 'messages', {observe: 'response', params})
+    return this.http.get<Message[]>(this.baseUrl + 'messages', { observe: 'response', params })
       .subscribe({
         next: response => setPaginatedResponse(response, this.paginatedResult)
       })
@@ -60,7 +74,7 @@ export class MessageService {
   }
 
   async sendMessage(username: string, content: string) {
-    return this.hubConnection?.invoke('SendMessage', {recipientUsername: username, content})
+    return this.hubConnection?.invoke('SendMessage', { recipientUsername: username, content })
   }
 
   deleteMessage(id: number) {

@@ -2,7 +2,7 @@
 
 A full-stack dating web application built with ASP.NET 8 Web API and Angular 18. Users can register, login, view and filter profiles, exchange messages in real-time, and manage photos. Admin users can moderate photos and manage user roles.
 
-##🚀 Features
+## 🚀 Features
 ### ✅ User Registration & Login
 - Secure authentication using JWT tokens
 - Role-based authorization (Admin / Member)

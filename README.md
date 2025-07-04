@@ -34,31 +34,31 @@ ASP.NET 8 Web API	Angular 18	SignalR	SQLite	JWT tokens
 
 ##  🗂 Project Structure
 ### API (/demo/DatingApp/API)
-Controllers/ → REST API controllers: UsersController, LikesController, MessagesController, AdminController, etc.
-Data/ → EF Core DbContext (DataContext.cs), Repositories, Seed data
-Entities/ → Domain models: AppUser, Photo, Message, UserLike, AppRole
-DTOs/ → Data transfer objects: MemberDTO, MessageDTO, PhotoDTO, etc.
-SignalR/ → SignalR hubs: MessageHub, PresenceHub
-Services/ → TokenService, PhotoService
-Helpers/ → Pagination, AutoMapper profiles, custom params classes
-Middleware/ → ExceptionMiddleware
+- Controllers/ → REST API controllers: UsersController, LikesController, MessagesController, AdminController, etc.
+- Data/ → EF Core DbContext (DataContext.cs), Repositories, Seed data
+- Entities/ → Domain models: AppUser, Photo, Message, UserLike, AppRole
+- DTOs/ → Data transfer objects: MemberDTO, MessageDTO, PhotoDTO, etc.
+- SignalR/ → SignalR hubs: MessageHub, PresenceHub
+- Services/ → TokenService, PhotoService
+- Helpers/ → Pagination, AutoMapper profiles, custom params classes
+- Middleware/ → ExceptionMiddleware
 
 ### Client (/demo/DatingApp/client)
-src/app/admin/ → Admin panel + photo/user management
-src/app/members/ → Member list, details, edit, messages, photo editor
-src/app/messages/ → General messaging components
-src/app/lists/ → Liked users / users who liked you
-src/app/modals/ → Confirmation dialogs, roles modals
-src/app/nav/ → Top nav component
-src/app/_guards/ → Route guards (auth, admin, unsaved changes)
-src/app/_services/ → Angular services (account, members, admin, messages, presence)
-src/app/_interceptors/ → JWT, error, loading interceptors
-src/app/_models/ → Interfaces for User, Photo, Message, etc.
-src/app/_forms/ → Shared form components (text input, date picker)
-src/app/errors/ → Error components (404, server error, test errors)
-src/app/home/, src/app/register/ → Home + register views
-environments/ → API base URL config
-assets/ → Static assets
+- src/app/admin/ → Admin panel + photo/user management
+- src/app/members/ → Member list, details, edit, messages, photo editor
+- src/app/messages/ → General messaging components
+- src/app/lists/ → Liked users / users who liked you
+- src/app/modals/ → Confirmation dialogs, roles modals
+- src/app/nav/ → Top nav component
+- src/app/_guards/ → Route guards (auth, admin, unsaved changes)
+- src/app/_services/ → Angular services (account, members, admin, messages, presence)
+- src/app/_interceptors/ → JWT, error, loading interceptors
+- src/app/_models/ → Interfaces for User, Photo, Message, etc.
+- src/app/_forms/ → Shared form components (text input, date picker)
+- src/app/errors/ → Error components (404, server error, test errors)
+- src/app/home/, src/app/register/ → Home + register views
+- environments/ → API base URL config
+- assets/ → Static assets
 
 ## ⚙ Getting Started
 Prerequisites
@@ -107,7 +107,7 @@ Client runs at: http://localhost:4200/
 - Client-side guards for protected routes
 - Server-side file validation for image uploads
 
-### 💡 Development Notes
+##💡 Development Notes
 - API uses EF Core Code First migrations
 - Angular uses interceptors for error handling, loading indicators, and JWT injection
 - SignalR tracks online presence and delivers real-time notifications

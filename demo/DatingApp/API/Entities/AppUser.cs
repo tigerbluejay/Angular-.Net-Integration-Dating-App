@@ -29,7 +29,7 @@ public class AppUser : IdentityUser<int>
 
     // this is a navigation property
     // having a one to many relationship. One AppUser many Photos
-    public List<Photo> Photos { get; set; }
+    public List<Photo> Photos { get; set; } = [];
 
     public List<UserLike> LikedByUsers { get; set; } = [];
 

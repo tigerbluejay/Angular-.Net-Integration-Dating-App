@@ -10,7 +10,7 @@ namespace API.Data;
 
 public class UserRepository(DataContext context, IMapper mapper) : IUserRepository
 {
-    public async Task<MemberDTO> GetMemberAsync(string username, bool isCurrentUser)
+    public async Task<MemberDTO?> GetMemberAsync(string username, bool isCurrentUser)
     {
         var query = context.Users
             .Where(x => x.UserName == username)
